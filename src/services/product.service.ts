@@ -1,4 +1,3 @@
-// import Joi from 'joi';
 import { IProduct } from '../interfaces/product.interface';
 import ProductModel from '../models/product.model';
 
@@ -9,6 +8,10 @@ export default class ProductService {
     const newProduct = await this.productModel.insert(product);
 
     return newProduct;
+  }
+
+  async update(id: number, orders: number[]) {
+    await this.productModel.update(id, orders);
   }
 
   async getAll() {
